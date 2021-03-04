@@ -1,3 +1,4 @@
+#!/bin/bash 
 apt-get update && apt-get -qq upgrade && apt-get -qq autoremove && apt-get autoclean
 apt update && apt upgrade -y && apt autoremove -y && apt autoclean
 apt install apache2 -y
