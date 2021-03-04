@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /*
+    destination: /var/www/magento-new-build/
+hooks:
+  BeforeInstall:
+    - location: scripts/restart_service
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/run_process
+      timeout: 1200
+      runas: root
