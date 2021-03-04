@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /*
-    destination: /var/www/magento-new-build/
+    destination: /var/www/html/magento-new-build/
 hooks:
   BeforeInstall:
     - location: scripts/restart_service
