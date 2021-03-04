@@ -6,8 +6,9 @@ files:
 hooks:
   BeforeInstall:
     - location: scripts/restart_service
-      timeout: 300
-      runas: root
+    - location: scripts/install_dependencies
+      timeout: 1200
+      runas: root  
   AfterInstall:
     - location: scripts/run_process
       timeout: 1200
