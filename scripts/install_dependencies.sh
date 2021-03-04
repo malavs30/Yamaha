@@ -12,11 +12,6 @@ apt install curl -y
 apt install wget -y
 apt install composer -y
 apt install php7.4 libapache2-mod-php7.4 php7.4-mysql php7.4-soap php7.4-bcmath php7.4-xml php7.4-mbstring php7.4-gd php7.4-common php7.4-cli php7.4-curl php7.4-intl php7.4-zip zip unzip -y
-cd /home/ubuntu/ && wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb
-cd /home/ubuntu/ && dpkg -i elasticsearch-7.6.0-amd64.deb
-/bin/systemctl daemon-reload
-/bin/systemctl enable elasticsearch.service
-systemctl start elasticsearch
 mysql -u root -e "create database magento;"
 mysql -u root -e "CREATE USER 'magento'@'localhost' IDENTIFIED BY 'eternal@123';"
 mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO "magento"@"localhost" WITH GRANT OPTION;"
@@ -39,4 +34,4 @@ sed -i '7d' /var/www/html/app/etc/env.php && sed -i "7i \        \ 'frontName' =
 php /var/www/html/bin/magento cache:flush
 chown -R ubuntu:www-data /var/www/html
 systemctl restart apache2
-systemctl restart elasticsearch
+
